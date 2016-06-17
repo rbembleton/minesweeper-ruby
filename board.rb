@@ -110,26 +110,20 @@ class Board
 
   end
 
-
-
-
-
-
-
-
-
   def find_squares(pos)
     row, col = pos
     row_range = find_squares_adjust_edge(row)
     col_range = find_squares_adjust_edge(col)
 
     poss_pos = []
+
     row_range.each do |r|
       col_range.each do |c|
         next if r == 0 && c == 0
         poss_pos << [row + r, col + c]
       end
     end
+
     poss_pos
 
   end
