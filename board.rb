@@ -1,11 +1,8 @@
-# require "byebug"
-
 class Board
   attr_reader :size, :grid
 
 
   def initialize(size = 9, bomb_mod = 1)
-    # debugger
     @size = size
     @grid = tileize_bomb_grid(make_bomb_grid(bomb_mod))
   end
@@ -55,6 +52,11 @@ class Board
     end
     puts output_grid_str
 
+  end
+
+  def [](pos)
+    y,x = pos
+    @grid[y][x]
   end
 
   def flag(pos)
